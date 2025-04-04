@@ -1,0 +1,353 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.39319458815218317 0.7544124822982556 0.5256042450365287 1.5623757006791354
+  position -0.8002015757909143 -0.8823294217233683 4.685744344430038
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 3
+  floorTileSize 0.1 0.1
+}
+Solid {
+  translation 0.654659 0.418901 0.125829
+  rotation 1.9319e-17 -6.84042e-18 -1 0.787081
+  scale 1.1 1.1 1.1
+  children [
+    DEF Wall Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.1 0.1
+        }
+      }
+      geometry Box {
+        size 1 0.25 0.3
+      }
+    }
+  ]
+  name "Wall(3)"
+  boundingObject USE Wall
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.388484 -0.314306 0.0427881
+  rotation 2.7715640391771637e-16 1.0836316328766913e-18 1 0.5235142705649064
+  children [
+    DEF Wall Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.1 0.1
+        }
+      }
+      geometry Box {
+        size 0.9 0.81 0.2
+      }
+    }
+  ]
+  name "Wall(1)"
+  boundingObject USE Wall
+  physics Physics {
+  }
+}
+DEF body Robot {
+  translation -1.14341 -0.899485 0.0226748
+  rotation -0.8088923511178664 -0.5879562552155989 0.0007786243379793564 -3.1405653071795863
+  children [
+    Compass {
+      translation 0 0.03 -0.02
+      children [
+        DEF compass Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.960784 0.760784 0.0666667
+            }
+            texture ImageTexture {
+            }
+          }
+          geometry Cylinder {
+            height 0.01
+            radius 0.006
+          }
+        }
+      ]
+      boundingObject USE compass
+      physics Physics {
+      }
+    }
+    GPS {
+      translation 0 0 -0.02
+      children [
+        DEF gps Shape {
+          geometry Cylinder {
+            height 0.01
+            radius 0.006
+          }
+        }
+      ]
+      boundingObject USE gps
+      physics Physics {
+      }
+    }
+    DistanceSensor {
+      translation -0.02 -0.041 -0.017
+      rotation 0 0 -1 2.2252956132800117
+      children [
+        Solid {
+          translation 0.004 0 0
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              geometry Cone {
+                bottomRadius 0.004
+                height 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "DSRightBack"
+      numberOfRays 2
+      aperture 0.6
+    }
+    DistanceSensor {
+      translation 0.02 -0.041 -0.017
+      rotation 0 0 -1 0.9162996938995747
+      children [
+        Solid {
+          translation 0.004 0 0
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              geometry Cone {
+                bottomRadius 0.004
+                height 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "DSLeftBack"
+      numberOfRays 2
+      aperture 0.6
+    }
+    DistanceSensor {
+      translation -0.044 0.01 -0.017
+      rotation 0 0 -1 3.14
+      children [
+        Solid {
+          translation 0.004 0 0
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              geometry Cone {
+                bottomRadius 0.004
+                height 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "DSRightSide"
+      numberOfRays 2
+      aperture 0.6
+    }
+    DistanceSensor {
+      translation 0.044 0.01 -0.017
+      rotation 0 0 -1 0
+      children [
+        Solid {
+          translation 0.004 0 0
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              geometry Cone {
+                bottomRadius 0.004
+                height 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "DSLeftSide"
+      numberOfRays 2
+      aperture 0.6
+    }
+    DistanceSensor {
+      translation -0.02 0.041 -0.017
+      rotation 0 0 -1 -1.9634996938995748
+      children [
+        Solid {
+          translation 0.004 0 0
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              geometry Cone {
+                bottomRadius 0.004
+                height 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "DSRightFront"
+      numberOfRays 2
+      aperture 0.6
+    }
+    DistanceSensor {
+      translation 0.02 0.041 -0.017
+      rotation 0 0 -1 -1.1765
+      children [
+        Solid {
+          translation 0.004 0 0
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              geometry Cone {
+                bottomRadius 0.004
+                height 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "DSLeftFront"
+      numberOfRays 2
+      aperture 0.6
+    }
+    Solid {
+      translation 0 0 -0.016
+      rotation 0 0 1 3.14159
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0
+            }
+          }
+          geometry Cylinder {
+            bottom FALSE
+            height 0.014
+            radius 0.051
+            top FALSE
+            subdivision 360
+          }
+        }
+      ]
+      name "head"
+      boundingObject Cylinder {
+        height 0.007
+        radius 0.05
+      }
+      physics Physics {
+      }
+      rotationStep 0.3
+    }
+    DEF WL HingeJoint {
+      jointParameters HingeJointParameters {
+        position 6179.8263335087095
+        anchor 0.05 0 0.002
+      }
+      device [
+        RotationalMotor {
+          name "LWM"
+        }
+      ]
+      endPoint Solid {
+        translation 0.05046711924823788 -0.00012595826636633937 0.001998668471821499
+        rotation 0.7090288308275564 -0.0382697636700749 0.7041402859117956 3.250518381076572
+        children [
+          DEF LW Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 0 0
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE LW
+        physics Physics {
+        }
+      }
+    }
+    DEF WR HingeJoint {
+      jointParameters HingeJointParameters {
+        position 6099.640766242351
+        anchor -0.05 0 0.002
+      }
+      device [
+        RotationalMotor {
+          name "RWM"
+        }
+      ]
+      endPoint Solid {
+        translation -0.05048965049185178 -5.829636281337096e-05 0.002126274683216334
+        rotation 0.6568363926748206 -0.40224070830598185 0.6377839491861104 3.9007789637058585
+        children [
+          DEF RW Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 0 0
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        boundingObject USE RW
+        physics Physics {
+        }
+      }
+    }
+    DEF body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.2 0.4 0.2
+          emissiveColor 0 0.04 0.1
+        }
+      }
+      geometry DEF body Cylinder {
+        height 0.0435
+        radius 0.05
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "bug2controller"
+}
+Solid {
+  translation 1.13 0.94 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.3 0
+        }
+        texture ImageTexture {
+        }
+      }
+      geometry Cone {
+        bottomRadius 0.08
+        height 0.1
+      }
+    }
+  ]
+}
